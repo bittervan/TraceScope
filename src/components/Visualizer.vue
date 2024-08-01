@@ -3,12 +3,17 @@
     <textarea v-model="inputValue" :placeholder="placeHolder" class="fixed-input"></textarea>
     <button @click="drawNetwork" class="fixed-button">Generate Diagram</button>
     <div ref="visNetwork" class="vis-network"></div>
+    <button @click="goToGithub" class="github-button">Github Project</button>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import { Network } from 'vis-network/standalone'; // 引入 standalone 版本
+
+const goToGithub = () => {
+  window.location.href = 'https://github.com/your-username/your-repo';
+}
 
 const inputValue = ref(` 5)               |  lru_add_fn() {
  5)   0.090 us    |    __rcu_read_lock();
@@ -283,9 +288,17 @@ onMounted(() => {
 .fixed-button {
   position: fixed;
   top: 10px;
+  left: calc(12.5vw + 20px - 5px);
+  height: 30px;
+  width: calc(12.5vw - 5px);
+}
+
+.github-button {
+  position: fixed;
+  top: 10px;
   left: 10px;
   height: 30px;
-  width: calc(25vw);
+  width: calc(12.5vw - 5px);
 }
 
 .vis-network {
