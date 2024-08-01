@@ -10,7 +10,20 @@
 import { ref, onMounted } from 'vue';
 import { Network } from 'vis-network/standalone'; // 引入 standalone 版本
 
-const inputValue = ref('');
+const inputValue = ref(` 5)               |  lru_add_fn() {
+ 5)   0.090 us    |    __rcu_read_lock();
+ 5)   0.090 us    |    folio_mapping();
+ 5)   0.090 us    |    __rcu_read_unlock();
+ 5)               |    __mod_lruvec_state() {
+ 5)   0.090 us    |      __mod_node_page_state();
+ 5)               |      __mod_memcg_lruvec_state() {
+ 5)   0.100 us    |        cgroup_rstat_updated();
+ 5)   0.280 us    |      }
+ 5)   0.650 us    |    }
+ 5)   0.100 us    |    __mod_zone_page_state();
+ 5)   0.100 us    |    mem_cgroup_update_lru_size();
+ 5)   1.800 us    |  }
+`);
 const placeHolder = ref(`cd /sys/kernel/debug/tracing
 echo 0 > tracing_on
 echo > trace
@@ -254,7 +267,7 @@ const drawNetwork = () => {
 };
 
 onMounted(() => {
-  // drawNetwork();
+  drawNetwork();
 });
 </script>
 
@@ -264,7 +277,7 @@ onMounted(() => {
   top: 50px;
   left: 10px;
   height: calc(100vh - 60px);
-  width: calc(20vw);
+  width: calc(25vw);
 }
 
 .fixed-button {
@@ -272,7 +285,7 @@ onMounted(() => {
   top: 10px;
   left: 10px;
   height: 30px;
-  width: calc(20vw);
+  width: calc(25vw);
 }
 
 .vis-network {
@@ -282,6 +295,6 @@ onMounted(() => {
   margin-top: 0px;
   position: fixed;
   top: 10px;
-  left: calc(20vw + 20px);
+  left: calc(25vw + 20px);
 }
 </style>
