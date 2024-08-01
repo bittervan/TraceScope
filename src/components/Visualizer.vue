@@ -3,7 +3,7 @@
     <textarea v-model="inputValue" :placeholder="placeHolder" class="fixed-input"></textarea>
     <button @click="drawNetwork" class="fixed-button">Generate Diagram</button>
     <div ref="visNetwork" class="vis-network"></div>
-    <button @click="goToGithub" class="github-button">Github Project</button>
+    <button @click="goToGithub" class="github-button">README</button>
   </div>
 </template>
 
