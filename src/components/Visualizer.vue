@@ -12,7 +12,7 @@ import { ref, onMounted } from 'vue';
 import { Network } from 'vis-network/standalone'; // 引入 standalone 版本
 
 const goToGithub = () => {
-  window.location.href = 'https://github.com/your-username/your-repo';
+  window.location.href = 'https://github.com/bittervan/TraceScope';
 }
 
 const inputValue = ref(` 5)               |  lru_add_fn() {
