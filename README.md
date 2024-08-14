@@ -1,6 +1,8 @@
 # TraceScope
 
-This is a tool to visualize a Ftrace log, as long as time spent on each function.
+Try TraceScope on [Github Pages](https://bittervan.github.io/TraceScope/) directly!
+
+This is a tool to visualize a Ftrace log, as well as time spent on each function.
 
 ```
 cd /sys/kernel/debug/tracing
